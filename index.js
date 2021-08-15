@@ -99,13 +99,6 @@ const uploadFile = () => {
     bgProgress.style.transform = scaleX;
     progressBar.style.transform = scaleX;
   };
-
-  // handle error
-  xhr.upload.onerror = function () {
-    showToast(`Error in upload: ${xhr.status}.`);
-    fileInput.value = ""; // reset the input
-  };
-
   // listen for response which will give the link
   xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
